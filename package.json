@@ -1,0 +1,28 @@
+{
+  "name": "evotrade-contracts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hardhat.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.3",
+    "@nomicfoundation/hardhat-ethers": "^3.0.5",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@nomiclabs/hardhat-etherscan": "^3.1.8",
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "@openzeppelin/contracts": "^4.9.3",
+    "chai": "^4.4.1",
+    "ethers": "^6.10.0"
+  },
+  "dependencies": {
+    "hardhat": "^2.19.4"
+  }
+}
