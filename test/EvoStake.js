@@ -14,7 +14,7 @@ describe("EvoStaking Contract", function () {
         evoStaking = await EvoStakingFactory.deploy();
         await evoStaking.waitForDeployment();
 
-        const mockEvo = await ethers.getContractFactory("EvoToken");
+        const mockEvo = await ethers.getContractFactory("MockERC20");
         mockEvoToken = await mockEvo.deploy("Evotrade", "EVO");
         await mockEvoToken.waitForDeployment();
 

@@ -1,5 +1,4 @@
 require("dotenv").config();
-// require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-ethers");
 require("@nomiclabs/hardhat-etherscan");
 require("@nomicfoundation/hardhat-chai-matchers");
@@ -7,27 +6,42 @@ require("@nomicfoundation/hardhat-chai-matchers");
 
 module.exports = {
   solidity: {
-    version: "0.8.20"
+    compilers: [
+      {
+        version: "0.8.20",
+        settings: { }
+      }
+    ]
   },
   networks: {
-    mainnet: {
-      url: "https://eth.llamarpc.com",
-      accounts: [`0x${process.env.PK}`],
-      saveDeployments: true,
-      gas: 2000000,
-      gasPrice: 16000000000 //21 gwei
+    hardhat: {
+      forking: {
+        url: "https://xxxxx.base-mainnet.quiknode.pro/xxxxx/",
+        blockNumber: 21190479 
+      },
+      gasPrice: 1000000000
     },
-    goerli: {
-      url: "https://ethereum-goerli.publicnode.com",
-      accounts: [`0x${process.env.PK}`],
-      saveDeployments: true,
+    base:{
+        url: "https://xxxxx.base-mainnet.quiknode.pro/xxxxxx/",
+        accounts: [`0x${process.env.PK}`],
+        saveDeployments: true,
+        gasPrice: 1000000000,
     }
   },
   etherscan: {
-    apiKey: 'VCX9J7EBB6HQ5PR3QMG49U7ZRE7CQY9XAN'
+    apiKey: {
+      base:'xxxxx'
+    },
+    customChains: [
+      {
+        network: "base",
+        chainId: 8453,
+        urls: {
+          apiURL: "https://api.basescan.org/api",
+          browserURL: "https://explorer.basescan.org"
+        }
+      }
+    ]
+
   }
 };
-
-
-
-//https://eth-converter.com/
